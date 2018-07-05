@@ -40,6 +40,22 @@ public class BinaryTree {
     }
   }
 
+  public String printPreOrderTraversal() {
+    StringBuilder builder = new StringBuilder();
+    return printPreOrderTraversal(getRootNode(), builder).toString();
+  }
+
+  private StringBuilder printPreOrderTraversal(Node node, StringBuilder builder) {
+      if(node.getLeftChild() != null) {
+        printPreOrderTraversal(node.getLeftChild(), builder);
+      }
+
+      if(node.getRightChild() != null) {
+        printPreOrderTraversal(node.getRightChild(), builder);
+      }
+
+      return builder.append(node.getData() + ",");
+  }
 }
 
 class Node {
