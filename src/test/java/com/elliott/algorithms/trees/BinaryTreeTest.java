@@ -31,13 +31,13 @@ public class BinaryTreeTest {
   }
 
   @Test
-  public void testPreOrderTraversal() {
+  public void testPostOrderTraversal() {
       BinaryTree binaryTree = new BinaryTree(40);
       binaryTree.addNode(30);
       binaryTree.addNode(50);
       binaryTree.addNode(100);
       binaryTree.addNode(120);
       binaryTree.addNode(10);
-      assertEquals("10,30,120,100,50,40,", binaryTree.printPreOrderTraversal());
+      assertEquals("10,30,120,100,50,40,", binaryTree.printPostOrderTraversal());
   }
 }

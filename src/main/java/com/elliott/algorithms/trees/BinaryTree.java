@@ -40,18 +40,18 @@ public class BinaryTree {
     }
   }
 
-  public String printPreOrderTraversal() {
+  public String printPostOrderTraversal() {
     StringBuilder builder = new StringBuilder();
-    return printPreOrderTraversal(getRootNode(), builder).toString();
+    return printPostOrderTraversal(getRootNode(), builder).toString();
   }
 
-  private StringBuilder printPreOrderTraversal(Node node, StringBuilder builder) {
+  private StringBuilder printPostOrderTraversal(Node node, StringBuilder builder) {
       if(node.getLeftChild() != null) {
-        printPreOrderTraversal(node.getLeftChild(), builder);
+        printPostOrderTraversal(node.getLeftChild(), builder);
       }
 
       if(node.getRightChild() != null) {
-        printPreOrderTraversal(node.getRightChild(), builder);
+        printPostOrderTraversal(node.getRightChild(), builder);
       }
 
       return builder.append(node.getData() + ",");
