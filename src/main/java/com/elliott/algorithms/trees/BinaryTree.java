@@ -22,10 +22,18 @@ public class BinaryTree {
 
     if(value < currentData) {
       //needs to go left
-      addNode(value, node.getLeftChild());
-    } else if(node.getData() > currentData) {
+      if(node.getLeftChild() != null) {
+        addNode(value, node.getLeftChild());
+      } else {
+        node.setLeftChild(new Node(value));
+      }
+    } else if(value > currentData) {
       //needs to go rightChild
-      addNode(value, node.getRightChild());
+      if(node.getRightChild() != null) {
+        addNode(value, node.getRightChild());
+      } else {
+        node.setRightChild(new Node(value));
+      }
     } else {
       //this is where it should live
       node.setData(currentData);
@@ -60,4 +68,11 @@ class Node {
     return rightChild;
   }
 
+  public void setLeftChild(Node node) {
+    this.leftChild = node;
+  }
+
+  public void setRightChild(Node node) {
+    this.rightChild = node;
+  }
 }
